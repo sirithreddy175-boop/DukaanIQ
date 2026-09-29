@@ -1,0 +1,66 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Product name"
+    },
+    "sku": {
+      "type": "string",
+      "title": "SKU / Code"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "quantity": {
+      "type": "number",
+      "title": "Current quantity",
+      "default": 0
+    },
+    "unit": {
+      "type": "string",
+      "title": "Unit",
+      "default": "pcs"
+    },
+    "purchase_price": {
+      "type": "number",
+      "title": "Purchase price"
+    },
+    "selling_price": {
+      "type": "number",
+      "title": "Selling price"
+    },
+    "supplier_id": {
+      "type": "string",
+      "title": "Supplier ID"
+    },
+    "supplier_name": {
+      "type": "string",
+      "title": "Supplier name"
+    },
+    "low_stock_threshold": {
+      "type": "number",
+      "title": "Low stock alert at"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

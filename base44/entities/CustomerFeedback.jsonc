@@ -1,0 +1,56 @@
+{
+  "name": "CustomerFeedback",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "title": "Type",
+      "enum": [
+        "feedback",
+        "note",
+        "complaint",
+        "request"
+      ],
+      "default": "note"
+    },
+    "customer_name": {
+      "type": "string",
+      "title": "Customer name"
+    },
+    "customer_phone": {
+      "type": "string",
+      "title": "Customer phone"
+    },
+    "product_id": {
+      "type": "string",
+      "title": "Related product ID"
+    },
+    "product_name": {
+      "type": "string",
+      "title": "Related product name"
+    },
+    "note": {
+      "type": "string",
+      "title": "Note / feedback text"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date"
+    }
+  },
+  "required": [
+    "note"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

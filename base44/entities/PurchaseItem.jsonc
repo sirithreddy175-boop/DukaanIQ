@@ -1,0 +1,53 @@
+{
+  "name": "PurchaseItem",
+  "type": "object",
+  "properties": {
+    "purchase_id": {
+      "type": "string",
+      "title": "Purchase ID"
+    },
+    "product_id": {
+      "type": "string",
+      "title": "Product ID"
+    },
+    "product_name": {
+      "type": "string",
+      "title": "Product name"
+    },
+    "quantity": {
+      "type": "number",
+      "title": "Quantity",
+      "default": 1
+    },
+    "unit": {
+      "type": "string",
+      "title": "Unit",
+      "default": "pcs"
+    },
+    "purchase_price": {
+      "type": "number",
+      "title": "Purchase price per unit"
+    },
+    "line_total": {
+      "type": "number",
+      "title": "Line total",
+      "default": 0
+    }
+  },
+  "required": [
+    "purchase_id",
+    "product_name",
+    "quantity"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

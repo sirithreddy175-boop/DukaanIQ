@@ -1,0 +1,48 @@
+{
+  "name": "SaleItem",
+  "type": "object",
+  "properties": {
+    "sale_id": {
+      "type": "string",
+      "title": "Sale ID"
+    },
+    "product_id": {
+      "type": "string",
+      "title": "Product ID"
+    },
+    "product_name": {
+      "type": "string",
+      "title": "Product name"
+    },
+    "quantity": {
+      "type": "number",
+      "title": "Quantity sold",
+      "default": 1
+    },
+    "selling_price": {
+      "type": "number",
+      "title": "Selling price per unit"
+    },
+    "line_total": {
+      "type": "number",
+      "title": "Line total",
+      "default": 0
+    }
+  },
+  "required": [
+    "sale_id",
+    "product_name",
+    "quantity"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

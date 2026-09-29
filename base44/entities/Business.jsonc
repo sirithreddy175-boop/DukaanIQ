@@ -1,0 +1,57 @@
+{
+  "name": "Business",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Shop name"
+    },
+    "owner_name": {
+      "type": "string",
+      "title": "Owner name"
+    },
+    "shop_type": {
+      "type": "string",
+      "title": "Type of shop"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "gstin": {
+      "type": "string",
+      "title": "GST / Tax ID"
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "default": "INR"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
